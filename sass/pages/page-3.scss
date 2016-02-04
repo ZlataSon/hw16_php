@@ -1,0 +1,93 @@
+/*===================
+ page-3
+ ====================*/
+
+/*===================
+ page-3 one
+ ====================*/
+
+.one {
+  background: #ffffff;
+
+  h3 {
+    color: $p-color-2;
+    font-size: 0.875em;
+    font-weight: 400;
+  }
+
+  .inline:nth-child(even) {
+    font-weight: 500;
+  }
+
+  .price {
+    font-size: 1.875em;
+    font-weight: 900;
+    line-height: 1.125em;
+    color: $text-price-1;
+
+    span {
+      color: $text-price-2;
+      text-decoration: line-through;
+    }
+  }
+
+  .coment {
+    color: $p-color-2;
+    font-size: 0.75em;
+    line-height: 1.125em;
+    font-weight: 500;
+    margin: 1% 0 10% 0;
+
+    span {
+      font-weight: 300;
+    }
+  }
+
+  .buy-lg {
+    margin-left: -15px;
+  }
+
+  .bottom {
+    margin-top: 21%;
+  }
+}
+
+.item-cosmetic {
+  background: #ededed;
+  max-width: 424px;
+  margin: 0;
+  padding: 0;
+  border: 0 none;
+
+  img {
+    opacity: 1;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  img:hover {
+    opacity: 0.1;
+  }
+}
+
+/*===================
+ page-3 two
+ ====================*/
+
+.two {
+  background: #c2bcb7 url("../img/bg-p3.png") no-repeat scroll center top;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  .row div {
+    margin: 0 auto;
+  }
+
+  p {
+  font-weight: 900;
+  color: $text-price-1;
+  }
+}

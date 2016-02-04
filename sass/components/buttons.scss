@@ -1,0 +1,61 @@
+
+/*===================
+   button
+   ====================*/
+
+.social {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  text-align: center;
+  border-radius: 1.375em;
+  border: 0.03em solid transparent;
+  background: transparent;
+
+  &:hover, &:focus {
+    background: $bg-bright;
+    box-shadow: 0 0 3.35em 0.713em $bg-bright;
+  }
+}
+
+.buy-lg {
+  @include btn;
+  padding: 3% 12% 2% 12%;
+
+  &:hover, &:focus, &:active, &:link, &:visited {
+    background: rgb(171, 133, 0);
+    text-decoration: none;
+    color: #ffffff;
+  }
+
+  img {
+    vertical-align: middle;
+    margin: 0;
+  }
+}
+
+.buy-sm {
+  @include btn;
+  padding: 1.5% 4% 1.5% 4%;
+  margin: 0 0 2% 0;
+
+  &:hover, &:focus {
+    background: rgb(171, 133, 0);
+    text-decoration: none;
+    color: #ffffff;
+  }
+}
+
+.btn-success {
+  padding: 13px 45px 10px 45px;
+  background: $bg-bright;
+  color: #ffffff;
+  border: none;
+}
+
+.btn-success:hover, .btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success:link,
+.btn-success:visited, .btn-success:active:focus, .btn-success:active:hover {
+  color: #FFF;
+  background-color: rgb(171, 133, 0);
+  border: none;
+}

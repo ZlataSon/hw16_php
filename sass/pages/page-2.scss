@@ -1,0 +1,34 @@
+/*===================
+ page-2
+ ====================*/
+
+/*===================
+ page-2 catalog
+ ====================*/
+
+.catalog {
+  background: #ffffff;
+
+  p {
+    font-weight: 900;
+    color: $text-price-1;
+    font-size: 1em;
+  }
+}
+
+.news {
+    margin: 45px 0 35px 0;
+
+  a {
+      font-size: 0.75em;
+      color: $p-color-2;
+      margin-right: 10px;
+
+      &:hover {
+        color: $bg-bright;
+        text-decoration: none;
+      }
+    }
+}
+
+
