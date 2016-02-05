@@ -10,6 +10,10 @@ header {
     margin-right: 0;
     margin-left: 0;
   }
+
+  .row {
+    padding-top: 10px;
+  }
 }
 
 header {
@@ -24,8 +28,8 @@ header {
   }
 
   .search {
-    display: inline-block;
     padding: 15px 10px;
+    float: right;
   }
 
   .navbar-default {
@@ -126,6 +130,18 @@ header {
     overflow: hidden;
     text-align: right;
   }
+
+
+  header .search {
+    display: inline-block;
+    padding: 15px 10px;
+    float: none;
+  }
+
+  .navbar-toggle {
+    padding: 11px 10px;
+    margin-top: 15px;
+  }
 }
 
 /*===================
@@ -140,6 +156,7 @@ header {
     text-overfolow: ellipsis;
     overflow: hidden;
   }
+
 
   /*===================
    випадаюче меню без кліка
