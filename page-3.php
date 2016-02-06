@@ -135,36 +135,21 @@
                 <h2>Вам также может понравиться</h2>
 
                 <div class="row">
-                    <div class="col-xs-6 col-sm-4 col-md-1-5 col-lg-1-5">
-                        <div class="item-cosmetic"><img src="img/cosmetic-1.svg" class="img-responsive"></div>
-                        <h5>Шампунь ежедневного пользования</h5>
 
-                        <p>280 грн.</p>
-                    </div>
-                    <div class="col-xs-6 col-sm-4 col-md-1-5 col-lg-1-5">
-                        <div class="item-cosmetic"><img src="img/cosmetic-2.svg" class="img-responsive"></div>
-                        <h5>Шампунь ежедневного пользования</h5>
+                    <?php
+                    include('array.php');
 
-                        <p>280 грн.</p>
-                    </div>
-                    <div class="col-xs-6 col-sm-4 col-md-1-5 col-lg-1-5">
-                        <div class="item-cosmetic"><img src="img/cosmetic-3.svg" class="img-responsive"></div>
-                        <h5>Шампунь ежедневного пользования</h5>
+                    foreach ($miniCatalog as $item) {
+                        echo '<div class="col-xs-6 col-sm-4 col-md-1-5 col-lg-1-5">';
+                        echo '<div class="item-cosmetic">';
+                        echo "<img src=".$item['src']." alt=".$item['alt']." class=\"img-responsive\"/>";
+                        echo "</div>";
+                        echo '<h5>'.$item['text'].'</h5>';
+                        echo '<p>'.$item['price'].'</p>';
+                        echo '</div>';
+                    }
+                    ?>
 
-                        <p>280 грн.</p>
-                    </div>
-                    <div class="col-xs-6 col-sm-4 col-md-1-5 col-lg-1-5">
-                        <div class="item-cosmetic"><img src="img/cosmetic-4.svg" class="img-responsive"></div>
-                        <h5>Шампунь ежедневного пользования</h5>
-
-                        <p>280 грн.</p>
-                    </div>
-                    <div class="col-xs-6 col-sm-4 col-md-1-5 col-lg-1-5">
-                        <div class="item-cosmetic"><img src="img/cosmetic-5.svg" class="img-responsive"></div>
-                        <h5>Шампунь ежедневного пользования</h5>
-
-                        <p>280 грн.</p>
-                    </div>
                 </div>
             </div>
         </article>
