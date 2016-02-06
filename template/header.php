@@ -10,7 +10,7 @@
                 <div class="navbar-header navbar-default text-left">
                     <form action="#" method="get" class="clearfix">
                         <input type="search" placeholder="Поиск" name="main-search">
-                        <input type="image" src="img/search.svg" alt="Поиск">
+                        <input type="image" src="../img/search.svg" alt="Поиск">
                     </form>
                     <button type="button" class="navbar-toggle" data-toggle="collapse"
                             data-target="#responsive-menu">
@@ -22,7 +22,7 @@
                 </div>
                 <nav class="collapse navbar-collapse"
                      id="responsive-menu">
-                    <a class="search" href="page-2.php"><img src="img/icon-buy.png"></a>
+                    <a class="search" href="../page-2.php"><img src="../img/icon-buy.png"></a>
 
                     <?php
                     include('array.php');
