@@ -2,12 +2,24 @@
  page-3
  ====================*/
 
+.page-3 {
+  background: #ffffff;
+
+  article {
+    padding: 63px 5px 55px 5px;
+  }
+}
+
 /*===================
  page-3 one
  ====================*/
 
 .one {
   background: #ffffff;
+
+  h2 {
+    margin-left: 0;
+  }
 
   h3 {
     color: $p-color-2;
@@ -48,7 +60,7 @@
   }
 
   .bottom {
-    margin-top: 21%;
+    margin-top: 17%;
   }
 }
 

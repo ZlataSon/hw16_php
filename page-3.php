@@ -38,7 +38,7 @@
 
     <!-- main -->
 
-    <main class="page-4">
+    <main class="page-3">
 
         <!-- one -->
 

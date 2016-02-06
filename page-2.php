@@ -46,62 +46,26 @@
                 <div class="col-xs-12 col-sm-6 col-md-5 col-lg-3">
                     <nav class="catalog-nav">
                         <h2>Каталог</h2>
-                        <ul>
-                            <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Соли и
-                                грязи</a>
-                                <ul class="dropdown-menu dropdown-menu-right">
-                                    <li><a href="#">Дезодорант женский "Фиона"</a></li>
-                                    <li><a href="#">Дезодорант женский "Рут"</a></li>
-                                    <li><a href="#">Дезодорант женский "Киви"</a></li>
-                                    <li><a href="#">Дезодорант женский "Леди"</a></li>
-                                    <li><a href="#">Мужской дезодорант "Лорд"</a></li>
-                                    <li><a href="#">Женские духи "Леди"</a></li>
-                                    <li><a href="#">Женские духи "Фиона"</a></li>
-                                    <li><a href="#">Женские духи "Монел"</a></li>
-                                    <li><a href="#">Женские духи "Киви"</a></li>
-                                    <li><a href="#">Женские духи "Рут"</a></li>
-                                    <li><a href="#">Женские духи "1954"</a></li>
-                                    <li><a href="#">Мужской лосьон "Лорд"</a></li>
-                                    <li><a href="#">Губная помада</a></li>
-                                    <li><a href="#">Биологически акт</a></li>
-                                </ul>
-                            </li>
-                            <li class="divider"></li>
-                            <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Кремы и лосьены</a>
-                                <ul class="dropdown-menu dropdown-menu-right">
-                                    <li><a href="#">Дезодорант женский "Фиона"</a></li>
-                                    <li><a href="#">Дезодорант женский "Рут"</a></li>
-                                    <li><a href="#">Дезодорант женский "Киви"</a></li>
-                                    <li><a href="#">Дезодорант женский "Леди"</a></li>
-                                </ul>
-                            </li>
-                            <li class="divider"></li>
-                            <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Парфюмерия</a>
-                                <ul class="dropdown-menu dropdown-menu-right">
-                                    <li><a href="#">Женские духи "Рут"</a></li>
-                                    <li><a href="#">Женские духи "1954"</a></li>
-                                    <li><a href="#">Мужской лосьон "Лорд"</a></li>
-                                    <li><a href="#">Губная помада</a></li>
-                                    <li><a href="#">Биологически акт</a></li>
-                                </ul>
-                            </li>
-                            <li class="divider"></li>
-                            <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Витамины и бады</a>
-                                <ul class="dropdown-menu dropdown-menu-right">
 
-                                    <li><a href="#">Мужской лосьон "Лорд"</a></li>
-                                    <li><a href="#">Губная помада</a></li>
-                                    <li><a href="#">Биологически акт</a></li>
-                                </ul>
-                            </li>
-                            <li class="divider"></li>
-                            <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Чаи</a>
-                                <ul class="dropdown-menu dropdown-menu-right">
-                                    <li><a href="#">Чай "Фиона"</a></li>
-                                    <li><a href="#">Чай "Монел"</a></li>
-                                </ul>
-                            </li>
-                        </ul>
+                        <?php
+                        include('array.php');
+
+                        echo '<ul>';
+                        foreach ($navCatalog as $parent) {
+
+                            echo "<li class=\"dropdown\"><a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=".$parent['url'].">".$parent['title']."</a>";
+                            if (is_array($parent['child'])) {
+                                echo '<ul class="dropdown-menu dropdown-menu-right">';
+                                foreach ($parent['child'] as $child) {
+                                    echo "<li><a href=".$child['url'].">".$child['title']."</a>";
+                                }
+                                echo '</ul>';
+                            }
+                            echo '</li>';
+                        }
+                        echo '</ul>';
+                        ?>
+
                     </nav>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-7 col-lg-9">
@@ -111,78 +75,21 @@
                         <a href="#" class="inline">Я рекомендую</a>
                     </div>
                     <div class="row">
-                        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
-                            <div class="item-cosmetic"><img src="img/cosmetic-5.svg" class="img-responsive"></div>
-                            <h5>Доктор Нонна на НТВ в программе "Наши со Львом Новоженовым"</h5>
 
-                            <p>280 грн. <a href="#" class="buy-sm pull-right">Купить</a></p>
-                        </div>
-                        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
-                            <div class="item-cosmetic"><img src="img/cosmetic-1.svg" class="img-responsive"></div>
-                            <h5>Доктор Нонна на НТВ в программе "Наши со Львом Новоженовым"</h5>
+                    <?php
+                    include('array.php');
 
-                            <p>280 грн. <a href="#" class="buy-sm pull-right">Купить</a></p>
-                        </div>
-                        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
-                            <div class="item-cosmetic"><img src="img/cosmetic-2.svg" class="img-responsive"></div>
-                            <h5>Доктор Нонна на НТВ в программе "Наши со Львом Новоженовым"</h5>
+                    foreach ($catalog as $item) {
+                        echo '<div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">';
+                        echo '<div class="item-cosmetic">';
+                        echo "<img src=".$item['src']." alt=".$item['alt']." class=\"img-responsive\"/>";
+                        echo "</div>";
+                        echo '<h5>'.$item['text'].'</h5>';
+                        echo "<p>280 грн. <a class=\"buy-sm pull-right\" href=".$item['url']."> Купить </a></p>";
+                        echo '</div>';
+                    }
+                    ?>
 
-                            <p>280 грн. <a href="#" class="buy-sm pull-right">Купить</a></p>
-                        </div>
-                        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
-                            <div class="item-cosmetic"><img src="img/cosmetic-5.svg" class="img-responsive"></div>
-                            <h5>Доктор Нонна на НТВ в программе "Наши со Львом Новоженовым"</h5>
-
-                            <p>280 грн. <a href="#" class="buy-sm pull-right">Купить</a></p>
-                        </div>
-                        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
-                            <div class="item-cosmetic"><img src="img/cosmetic-1.svg" class="img-responsive"></div>
-                            <h5>Доктор Нонна на НТВ в программе "Наши со Львом Новоженовым"</h5>
-
-                            <p>280 грн. <a href="#" class="buy-sm pull-right">Купить</a></p>
-                        </div>
-                        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
-                            <div class="item-cosmetic"><img src="img/cosmetic-2.svg" class="img-responsive"></div>
-                            <h5>Доктор Нонна на НТВ в программе "Наши со Львом Новоженовым"</h5>
-
-                            <p>280 грн. <a href="#" class="buy-sm pull-right">Купить</a></p>
-                        </div>
-                        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
-                            <div class="item-cosmetic"><img src="img/cosmetic-5.svg" class="img-responsive"></div>
-                            <h5>Доктор Нонна на НТВ в программе "Наши со Львом Новоженовым"</h5>
-
-                            <p>280 грн. <a href="#" class="buy-sm pull-right">Купить</a></p>
-                        </div>
-                        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
-                            <div class="item-cosmetic"><img src="img/cosmetic-1.svg" class="img-responsive"></div>
-                            <h5>Доктор Нонна на НТВ в программе "Наши со Львом Новоженовым"</h5>
-
-                            <p>280 грн. <a href="#" class="buy-sm pull-right">Купить</a></p>
-                        </div>
-                        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
-                            <div class="item-cosmetic"><img src="img/cosmetic-2.svg" class="img-responsive"></div>
-                            <h5>Доктор Нонна на НТВ в программе "Наши со Львом Новоженовым"</h5>
-
-                            <p>280 грн. <a href="#" class="buy-sm pull-right">Купить</a></p>
-                        </div>
-                        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
-                            <div class="item-cosmetic"><img src="img/cosmetic-5.svg" class="img-responsive"></div>
-                            <h5>Доктор Нонна на НТВ в программе "Наши со Львом Новоженовым"</h5>
-
-                            <p>280 грн. <a href="#" class="buy-sm pull-right">Купить</a></p>
-                        </div>
-                        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
-                            <div class="item-cosmetic"><img src="img/cosmetic-1.svg" class="img-responsive"></div>
-                            <h5>Доктор Нонна на НТВ в программе "Наши со Львом Новоженовым"</h5>
-
-                            <p>280 грн. <a href="#" class="buy-sm pull-right">Купить</a></p>
-                        </div>
-                        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
-                            <div class="item-cosmetic"><img src="img/cosmetic-2.svg" class="img-responsive"></div>
-                            <h5>Доктор Нонна на НТВ в программе "Наши со Львом Новоженовым"</h5>
-
-                            <p>280 грн. <a href="#" class="buy-sm pull-right">Купить</a></p>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -192,36 +99,21 @@
                 <h2>Вам также может понравиться</h2>
 
                 <div class="row">
-                    <div class="col-xs-6 col-sm-4 col-md-1-5 col-lg-1-5">
-                        <div class="item-cosmetic"><img src="img/cosmetic-1.svg" class="img-responsive"></div>
-                        <h5>Шампунь ежедневного пользования</h5>
 
-                        <p>280 грн.</p>
-                    </div>
-                    <div class="col-xs-6 col-sm-4 col-md-1-5 col-lg-1-5">
-                        <div class="item-cosmetic"><img src="img/cosmetic-2.svg" class="img-responsive"></div>
-                        <h5>Шампунь ежедневного пользования</h5>
+                    <?php
+                    include('array.php');
 
-                        <p>280 грн.</p>
-                    </div>
-                    <div class="col-xs-6 col-sm-4 col-md-1-5 col-lg-1-5">
-                        <div class="item-cosmetic"><img src="img/cosmetic-3.svg" class="img-responsive"></div>
-                        <h5>Шампунь ежедневного пользования</h5>
+                    foreach ($miniCatalog as $item) {
+                        echo '<div class="col-xs-6 col-sm-4 col-md-1-5 col-lg-1-5">';
+                        echo '<div class="item-cosmetic">';
+                        echo "<img src=".$item['src']." alt=".$item['alt']." class=\"img-responsive\"/>";
+                        echo "</div>";
+                        echo '<h5>'.$item['text'].'</h5>';
+                        echo '<p>'.$item['price'].'</p>';
+                        echo '</div>';
+                    }
+                    ?>
 
-                        <p>280 грн.</p>
-                    </div>
-                    <div class="col-xs-6 col-sm-4 col-md-1-5 col-lg-1-5">
-                        <div class="item-cosmetic"><img src="img/cosmetic-4.svg" class="img-responsive"></div>
-                        <h5>Шампунь ежедневного пользования</h5>
-
-                        <p>280 грн.</p>
-                    </div>
-                    <div class="col-xs-6 col-sm-4 col-md-1-5 col-lg-1-5">
-                        <div class="item-cosmetic"><img src="img/cosmetic-5.svg" class="img-responsive"></div>
-                        <h5>Шампунь ежедневного пользования</h5>
-
-                        <p>280 грн.</p>
-                    </div>
                 </div>
             </div>
         </article>
