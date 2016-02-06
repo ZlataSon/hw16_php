@@ -80,26 +80,20 @@
             <div class="container-fluid">
                 <h2>Новости</h2>
 
-                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
-                    <div class="item-cosmetic"><img src="img/event-1.png" class="img-responsive"></div>
-                    <p>Доктор Нонна на НТВ в программе "Наши со Львом Новоженовым"</p>
-                    <a href="#" class="down">Подробнее <img src="img/copy.png" class="img-responsive inline"></a>
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
-                    <div class="item-cosmetic"><img src="img/event-2.png" class="img-responsive"></div>
-                    <p>Доктор Нонна на НТВ в программе "Наши со Львом Новоженовым"</p>
-                    <a href="#" class="down">Подробнее <img src="img/copy.png" class="img-responsive inline"></a>
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
-                    <div class="item-cosmetic"><img src="img/event-3.png" class="img-responsive"></div>
-                    <p>Доктор Нонна на НТВ в программе "Наши со Львом Новоженовым"</p>
-                    <a href="#" class="down">Подробнее <img src="img/copy.png" class="img-responsive inline"></a>
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
-                    <div class="item-cosmetic"><img src="img/event-4.png" class="img-responsive"></div>
-                    <p>Доктор Нонна на НТВ в программе "Наши со Львом Новоженовым"</p>
-                    <a href="#" class="down">Подробнее <img src="img/copy.png" class="img-responsive inline"></a>
-                </div>
+                <?php
+                include('array.php');
+
+                foreach ($events as $item) {
+                    echo '<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">';
+                    echo '<div class="item-cosmetic">';
+                    echo "<img src=".$item['src']." alt=".$item['alt']." class=\"img-responsive\"/>";
+                    echo "</div>";
+                    echo '<p>'.$item['text'].'</p>';
+                    echo "<a class=\"down\" href=".$item['url']."> Подробнее <img src=\"img/copy.png\" class=\"img-responsive inline\"></a>";
+                    echo '</div>';
+                }
+                ?>
+
             </div>
         </article>
 
@@ -125,42 +119,21 @@
                     <p>280 грн. <a href="#" class="buy-sm pull-right">Купить</a></p>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-7 col-lg-7">
-                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                        <div class="item-cosmetic"><img src="img/cosmetic-2.svg" class="img-responsive"></div>
-                        <h5>Доктор Нонна на НТВ в программе "Наши со Львом Новоженовым"</h5>
-                        <a href="#" class="down">Подробнее <img src="img/copy.png"
-                                                                class="img-responsive inline"></a>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                        <div class="item-cosmetic"><img src="img/cosmetic-3.svg" class="img-responsive"></div>
-                        <h5>Доктор Нонна на НТВ в программе "Наши со Львом Новоженовым"</h5>
-                        <a href="#" class="down">Подробнее <img src="img/copy.png"
-                                                                class="img-responsive inline"></a>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                        <div class="item-cosmetic"><img src="img/cosmetic-4.svg" class="img-responsive"></div>
-                        <h5>Доктор Нонна на НТВ в программе "Наши со Львом Новоженовым"</h5>
-                        <a href="#" class="down">Подробнее <img src="img/copy.png"
-                                                                class="img-responsive inline"></a>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                        <div class="item-cosmetic"><img src="img/cosmetic-2.svg" class="img-responsive"></div>
-                        <h5>Доктор Нонна на НТВ в программе "Наши со Львом Новоженовым"</h5>
-                        <a href="#" class="down">Подробнее <img src="img/copy.png"
-                                                                class="img-responsive inline"></a>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                        <div class="item-cosmetic"><img src="img/cosmetic-3.svg" class="img-responsive"></div>
-                        <h5>Доктор Нонна на НТВ в программе "Наши со Львом Новоженовым"</h5>
-                        <a href="#" class="down">Подробнее <img src="img/copy.png"
-                                                                class="img-responsive inline"></a>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                        <div class="item-cosmetic"><img src="img/cosmetic-4.svg" class="img-responsive"></div>
-                        <h5>Доктор Нонна на НТВ в программе "Наши со Львом Новоженовым"</h5>
-                        <a href="#" class="down">Подробнее <img src="img/copy.png"
-                                                                class="img-responsive inline"></a>
-                    </div>
+
+                    <?php
+                    include('array.php');
+
+                    foreach ($catalog_1 as $item) {
+                        echo '<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">';
+                        echo '<div class="item-cosmetic">';
+                        echo "<img src=".$item['src']." alt=".$item['alt']." class=\"img-responsive\"/>";
+                        echo "</div>";
+                        echo '<h5>'.$item['text'].'</h5>';
+                        echo "<a class=\"down\" href=".$item['url']."> Подробнее <img src=\"img/copy.png\" class=\"img-responsive inline\"></a>";
+                        echo '</div>';
+                    }
+                    ?>
+
                 </div>
 
             </div>

@@ -30,7 +30,7 @@
                     echo '<ul class="nav navbar-nav">';
                     foreach ($nav as $parent) {
 
-                        echo "<li class=\"dropdown\"><a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=".$parent['url'].">".$parent['title']."</a>";
+                        echo "<li class=\"dropdown\"><a class=\"dropdown-toggle\" href=".$parent['url'].">".$parent['title']."</a>";
                         if (is_array($parent['child'])) {
                             echo '<ul class="dropdown-menu dropdown-menu-right">';
                             foreach ($parent['child'] as $child) {

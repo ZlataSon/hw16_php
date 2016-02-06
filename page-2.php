@@ -85,7 +85,9 @@
                         echo "<img src=".$item['src']." alt=".$item['alt']." class=\"img-responsive\"/>";
                         echo "</div>";
                         echo '<h5>'.$item['text'].'</h5>';
-                        echo "<p>280 грн. <a class=\"buy-sm pull-right\" href=".$item['url']."> Купить </a></p>";
+                        echo '<p>'.$item['price'];
+                        echo "<a class=\"buy-sm pull-right\" href=".$item['url']."> Купить </a>";
+                        echo '</p>';
                         echo '</div>';
                     }
                     ?>
