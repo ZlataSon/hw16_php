@@ -22,7 +22,7 @@
   @include btn;
   padding: 3% 12% 2% 12%;
 
-  &:hover, &:focus, &:active, &:link, &:visited {
+  &:hover, &:focus, &:active {
     background: rgb(171, 133, 0);
     text-decoration: none;
     color: #ffffff;
