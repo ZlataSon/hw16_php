@@ -128,4 +128,3 @@ $miniCatalog = array(
 );
 
 
-?>
